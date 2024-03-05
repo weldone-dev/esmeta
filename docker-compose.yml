@@ -1,0 +1,16 @@
+version: "3"
+services:
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    command: npm run start
+    ports:
+      - 3000:3000
+  server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    command: esmeta web
+    ports:
+      - 8080:8080
